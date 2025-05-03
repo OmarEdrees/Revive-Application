@@ -1,0 +1,2 @@
+D:/Final_work/work/revive/android/app/.cxx/Debug/5o3a5z6c/x86/CMakeFiles/edit_cache.dir
+D:/Final_work/work/revive/android/app/.cxx/Debug/5o3a5z6c/x86/CMakeFiles/rebuild_cache.dir
