@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:revive/core/utilies/extensions/app_extensions.dart';
 import 'package:revive/core/utilies/styles/app_text_styles.dart';
 import 'package:revive/features/company/company_home/models/request_model.dart';
 import 'package:revive/features/company/company_home/views/widgets/request_card.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class RequestGridView extends StatelessWidget {
   const RequestGridView({
@@ -18,7 +20,7 @@ class RequestGridView extends StatelessWidget {
     return requests.isEmpty
         ? Center(
             child: Text(
-              "No Requests Found",
+              LocaleKeys.companyHome_NoRequests.tr(),
               style: AppTextStyles.title24PrimaryColorW500,
             ),
           )

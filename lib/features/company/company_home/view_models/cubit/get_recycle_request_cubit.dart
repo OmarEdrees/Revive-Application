@@ -1,8 +1,10 @@
 import 'dart:async';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/di/dependancy_injection.dart';
 import 'package:revive/core/network/supabase/database/get_stream_data_with_spcific_id.dart';
 import 'package:revive/features/company/company_home/models/request_model.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 part 'get_recycle_request_state.dart';
 
@@ -41,7 +43,8 @@ class GetRecycleRequestCubit extends Cubit<GetRecycleRequestState> {
           }
           emit(GetRecycleRequestSuccess());
         } else {
-          emit(GetRecycleRequestFailure(errorMessage: "No requests found"));
+          emit(GetRecycleRequestFailure(
+              errorMessage: LocaleKeys.companyHome_NoRequests.tr()));
         }
       },
       onError: (error) {

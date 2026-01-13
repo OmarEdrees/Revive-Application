@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:revive/core/utilies/colors/app_colors.dart';
 import 'package:revive/core/utilies/extensions/app_extensions.dart';
 import 'package:revive/core/utilies/styles/app_text_styles.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class RedeemItemsTitle extends StatelessWidget {
   const RedeemItemsTitle({
@@ -23,7 +25,7 @@ class RedeemItemsTitle extends StatelessWidget {
         ),
       ),
       child: Text(
-        'Redeem Items',
+        LocaleKeys.Redeem_RedeemItems.tr(),
         style: AppTextStyles.title28WhiteColorW500,
       ),
     );

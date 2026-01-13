@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/helper/show_custom_dialog.dart';
@@ -8,6 +9,7 @@ import 'package:revive/features/auth/sign_up/view_models/cubit/sign_up_cubit.dar
 import 'package:revive/features/auth/sign_up/views/widgets/company_tab.dart';
 import 'package:revive/features/auth/sign_up/views/widgets/customer_tab.dart';
 import 'package:revive/features/auth/sign_up/views/widgets/sign_up_tab_bar.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class SignUpScreenBody extends StatelessWidget {
   const SignUpScreenBody({
@@ -23,21 +25,21 @@ class SignUpScreenBody extends StatelessWidget {
           if (state is SignUpSuccess) {
             context.popScreen();
             showCustomDialog(
-              title: "Success",
-              description: "Sign Up successfully",
+              title: LocaleKeys.signUp_dialog_Success.tr(),
+              description: LocaleKeys.signUp_dialog_SuccessMessage.tr(),
               dialogType: DialogType.success,
             );
           }
           if (state is SelectIndustry) {
             showCustomDialog(
-              title: "Info",
-              description: "Please select industry to continue",
+              title: LocaleKeys.signUp_dialog_Info.tr(),
+              description: LocaleKeys.signUp_dialog_InfoMessage.tr(),
               dialogType: DialogType.info,
             );
           }
           if (state is SignUpFailure) {
             showCustomDialog(
-              title: "Failure",
+              title: LocaleKeys.signUp_dialog_Failure.tr(),
               description: state.errorMessage,
               dialogType: DialogType.error,
             );
@@ -82,4 +84,3 @@ class SignUpScreenBody extends StatelessWidget {
     );
   }
 }
-

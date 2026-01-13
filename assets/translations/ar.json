@@ -1,0 +1,211 @@
+{
+  "onboarding": {
+    "welcome": {
+      "title": "مرحبا بكم في تطبيق إعادة التدوير!",
+      "description": "انضم إلينا في مهمتنا لجعل العالم مكانًا أنظف من خلال إعادة التدوير وكسب المكافآت."
+    },
+    "donate": {
+      "title": "تبرع بالمنتجات القابلة لإعادة التدوير!",
+      "description": "قم بإسقاط العناصر القابلة لإعادة التدوير واكسب النقاط التي يمكن استبدالها بقسائم."
+    },
+    "select": {
+      "title": "اختر صناعتك!",
+      "description": "كشركة، اختر صناعة إعادة التدوير التي ترغب في دعمها، وابدأ في جمع التبرعات."
+    },
+    "earn": {
+      "title": "احصل على مكافآت مقابل إعادة التدوير!",
+      "description": "مقابل كل عنصر تقوم بإعادة تدويره، تحصل على نقاط يمكن استبدالها بقسائم مثيرة!"
+    },
+    "get": {
+      "title": "ابدأ رحلتك مت تطبيقل إعادة التدوير!",
+      "description": "قم بالتسجيل أو تسجيل الدخول لتبدأ رحلتك مع Revive وابدأ في إحداث فرق."
+    },
+    "buttons": {
+      "back": "عودة",
+      "next": "التالي",
+      "skip": "تخطي",
+      "changeLang":"AR"
+    }
+  },
+  "profile":{
+    "textField": {
+      "name": "اسم المستخدم",
+      "email": "البريد الإلكتروني",
+      "address": "العنوان",
+      "voucher": "قسيمة الشراء"
+    },
+    "dialog":{
+      "success":"تم بنجاح",
+      "successMessage":"تم تحديث الملف الشخصي بنجاح",
+      "failed":"فشل",
+      "hint": "تلميح",
+      "hintMessage": "لم يتم إجراء أي تغييرات",
+      "buttonUpdate": "تحديث"
+    }
+},
+"pekiaPrice": {
+    "Kg": "١ كجم",
+    "Weight": "الوزن",
+    "Material": "المادة",
+    "Price": "السعر"
+  },
+  "categoryProducts":{  
+  "Plastic": {
+    "title": "بلاستيك",
+    "Chair": "كرسي",
+    "Toy": "لعبة",
+    "CleaningTools": "أدوات تنظيف",
+    "Cooler": "كولر / حافظة مياه",
+    "FoodContainers": "حافظات طعام",
+    "Other": "أخرى"
+  },
+  "EWaste": {
+    "title": "نفايات إلكترونية",
+    "RemoteControls": "أجهزة تحكم عن بعد",
+    "Televisions": "تلفزيونات",
+    "ChargersCables": "شواحن وكابلات",
+    "KeyboardsMice": "لوحات مفاتيح وفأرة",
+    "Headphones": "سماعات",
+    "Other": "أخرى"
+  },
+  "Glass": {
+    "title": "زجاج",
+    "WineBottles": "زجاجات",
+    "Jar": "برطمان",
+    "DrinkingGlass": "أكواب زجاجية",
+    "BrokenGlass": "زجاج مكسور",
+    "PlateBowl": "أطباق وعاء",
+    "Other": "أخرى"
+  },
+  "Metal": {
+    "title": "معادن",
+    "TinCanLid": "غطاء علبة صفيح",
+    "Saucepan": "قدر طهي",
+    "AluminumFoil": "ورق ألومنيوم",
+    "Wrench": "مفتاح ربط",
+    "Screm": "برغي / مسمار",
+    "Can": "علبة معدنية (كانز)",
+    "Other": "أخرى"
+  },
+  "Paper": {
+    "title": "ورق",
+    "Notebooks": "دفاتر",
+    "TakeoutContainer": "عبوات طعام سفري",
+    "Newspaper": "جرائد",
+    "OfficePaper": "ورق مكتب",
+    "PaperBag": "حقيبة ورقية",
+    "Other": "أخرى"
+  },
+  "Cardboard": {
+    "title": "كرتون",
+    "CoffeeCup": "كوب قهوة",
+    "CardboardSheet": "ألواح كرتون",
+    "CardboardTube": "أنابيب كرتونية",
+    "CardboardBox": "صندوق كرتون",
+    "Other": "أخرى"
+  },
+  "dialog": {
+    "Success": "تم بنجاح",
+    "successMessage": "تم تسجيل الخروج بنجاح",
+    "Failed": "فشل",
+    "SignOut": "تسجيل الخروج",
+    "SignOutMessage": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+    "title":"إعادة تدوير الفئات"
+}
+},
+"categoryDetails": {
+    "Success": "تم بنجاح",
+    "successMessage": "تم إرسال الطلب بنجاح",
+    "Hint": "تنبيه",
+    "HintMessage": "يرجى ملء جميع الحقول",
+    "Failed": "فشل",
+    "AddRequest": "إضافة طلب",
+    "income": "الدخل"
+},
+"Redeem": {
+    "RedeemItems": "عناصر الاستبدال",
+     "NoRedeemsFound":"لم يتم العثور على أي عمليات استرداد",
+    "dialog": {
+        "Hint": "تنبيه",
+        "Success": "تم بنجاح",
+        "successMessage": "تمت عملية الاستبدال بنجاح"
+    },
+    "AddRedeem": {
+        "hintTextTitle": "أدخل عنوان المكافأة",
+        "titleTitle": "عنوان المكافأة",
+        "hintTextDescription": "أدخل وصف المكافأة",
+        "titleDescription": "وصف المكافأة",
+        "hintTextPrice": "أدخل سعر الاستبدال",
+        "titlePrice": "سعر الاستبدال",
+        "AddRedeem": "إضافة مكافأة"
+    },
+    "Title": "العنوان",
+    "Price": "السعر",
+    "Description": "الوصف"
+},
+"companyHome": {
+  "SuccessSnackBar": "تم تحديث الطلب بنجاح",
+  "SuccessError": "حدث خطأ أثناء تحديث الطلب، يرجى المحاولة مرة أخرى",
+  "New": "جديد",
+  "Completed": "مكتمل",
+  "RecycleRequests": "طلبات إعادة التدوير",
+  "message": "عند إكمال الطلب، يرجى الضغط على موافق لتحديده كمكتمل",
+  "NoRequests": "لا توجد طلبات"
+},
+"request_details": {
+    "CategoryName": "اسم الفئة",
+    "ProductName": "اسم المنتج",
+    "ProductQuantity": "كمية المنتج",
+    "ProductPrice": "سعر المنتج",
+    "UserName": "اسم المستخدم"
+},
+"Splash":{
+    "Revive":"إعادة التدوير"
+  },
+
+  "signIn": {
+    "hintTextEmailCompany": "أدخل البريد الإلكتروني للشركة",
+    "titleEmailCompany": "البريد الإلكتروني للشركة",
+    "hintTextPasswordCompany": "أدخل كلمة مرور الشركة",
+    "titlePasswordCompany": "كلمة مرور الشركة",
+    "signIn": "تسجيل الدخول",
+    "HaveAccount": "ليس لديك حساب؟",
+    "signUp": "إنشاء حساب",
+    "hintTextEmailCustomer": "أدخل البريد الإلكتروني للعميل",
+    "titleEmailCustomer": "البريد الإلكتروني للعميل",
+    "hintTextPasswordCustomer": "أدخل كلمة مرور العميل",
+    "titlePasswordCustomer": "كلمة مرور العميل",
+    "Forgetpassword": "نسيت كلمة المرور؟",
+    "dialog": {
+      "Success": "تم بنجاح",
+      "SuccessMessage": "تم تسجيل الدخول بنجاح",
+      "Failure": "فشل",
+      "FailureMessage": "أنت لست "
+    },
+    "Customer": "عميل",
+    "Company": "شركة"
+  },
+  "signUp": {
+    "hintTextNameCompany": "أدخل اسم الشركة",
+    "titleNameCompany": "اسم الشركة",
+    "hintTextAddressCompany": "أدخل عنوان الشركة",
+    "titleAddressCompany": "عنوان الشركة",
+    "CompanyIndustry": "مجال الشركة",
+    "SelectIndustry": "اختر المجال",
+    "HaveAccount": "لديك حساب بالفعل؟",
+    "hintTextConfirmPasswordCompany": "تأكيد كلمة مرور الشركة",
+    "titleConfirmPasswordCompany": "تأكيد كلمة المرور",
+    "hintTextNameCustomer": "أدخل اسم العميل",
+    "titleNameCustomer": "اسم العميل",
+    "hintTextaddressCustomer": "أدخل عنوان العميل",
+    "titleAddressCustomer": "عنوان العميل",
+    "dialog": {
+      "Success": "تم بنجاح",
+      "SuccessMessage": "تم إنشاء الحساب بنجاح",
+      "Info": "تنبيه",
+      "InfoMessage": "يرجى اختيار مجال العمل للاستمرار",
+      "Failure": "فشل"
+    }
+  }
+
+}

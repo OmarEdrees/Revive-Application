@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/helper/show_custom_dialog.dart';
@@ -7,6 +8,7 @@ import 'package:revive/core/utilies/extensions/app_extensions.dart';
 import 'package:revive/core/utilies/styles/app_text_styles.dart';
 import 'package:revive/features/company/redeem/views/widgets/redeem_list_tile.dart';
 import 'package:revive/features/customer/buy_redeem/view_models/cubit/buy_redeem_cubit.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class RedeemsListView extends StatelessWidget {
   const RedeemsListView({
@@ -20,14 +22,14 @@ class RedeemsListView extends StatelessWidget {
         listener: (context, state) {
           if (state is NotEnoughPoints) {
             showCustomDialog(
-                title: "Hint",
+                title: LocaleKeys.Redeem_dialog_Hint.tr(),
                 description: state.errorMessage,
                 dialogType: DialogType.noHeader);
           }
           if (state is EnoughPoints) {
             showCustomDialog(
-                title: "Success",
-                description: "redeem successfully",
+                title: LocaleKeys.Redeem_dialog_Success.tr(),
+                description: LocaleKeys.Redeem_dialog_successMessage.tr(),
                 dialogType: DialogType.success);
           }
         },

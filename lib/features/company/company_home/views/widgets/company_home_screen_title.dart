@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:revive/core/utilies/colors/app_colors.dart';
 import 'package:revive/core/utilies/extensions/app_extensions.dart';
 import 'package:revive/core/utilies/styles/app_text_styles.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class CompanyHomeScreenTitle extends StatelessWidget {
   const CompanyHomeScreenTitle({
@@ -26,7 +28,7 @@ class CompanyHomeScreenTitle extends StatelessWidget {
             bottomRight: Radius.circular(32),
           )),
       child: Text(
-        "Recycle Requests",
+        LocaleKeys.companyHome_RecycleRequests.tr(),
         style: AppTextStyles.title24WhiteW500,
       ),
     );

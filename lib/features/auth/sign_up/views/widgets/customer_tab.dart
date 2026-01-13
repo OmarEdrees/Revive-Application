@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/components/custom_elevated_button.dart';
@@ -6,6 +7,7 @@ import 'package:revive/core/utilies/extensions/app_extensions.dart';
 import 'package:revive/features/auth/sign_in/views/widgets/custom_loading.dart';
 import 'package:revive/features/auth/sign_in/views/widgets/have_account_or_not.dart';
 import 'package:revive/features/auth/sign_up/view_models/cubit/sign_up_cubit.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class CustomerTab extends StatelessWidget {
   const CustomerTab({super.key, required this.cubit});
@@ -26,20 +28,20 @@ class CustomerTab extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomTextFormFieldWithTitle(
-                  hintText: "enter customer name",
-                  title: "Customer Name",
+                  hintText: LocaleKeys.signUp_hintTextNameCustomer.tr(),
+                  title: LocaleKeys.signUp_titleNameCustomer.tr(),
                   controller: cubit.customerNameController),
               CustomTextFormFieldWithTitle(
-                  hintText: "enter customer email",
-                  title: "Customer Email",
+                  hintText: LocaleKeys.signIn_hintTextEmailCustomer.tr(),
+                  title: LocaleKeys.signIn_titleEmailCustomer.tr(),
                   controller: cubit.customerEmailController),
               CustomTextFormFieldWithTitle(
-                  hintText: "enter customer address",
-                  title: "Customer Address",
+                  hintText: LocaleKeys.signUp_hintTextaddressCustomer.tr(),
+                  title: LocaleKeys.signUp_titleAddressCustomer.tr(),
                   controller: cubit.customerAddressController),
               CustomTextFormFieldWithTitle(
-                hintText: "enter customer password",
-                title: "Customer Password",
+                hintText: LocaleKeys.signIn_hintTextPasswordCustomer.tr(),
+                title: LocaleKeys.signIn_titlePasswordCustomer.tr(),
                 controller: cubit.customerPasswordController,
                 isPassword: true,
               ),
@@ -51,7 +53,7 @@ class CustomerTab extends StatelessWidget {
                   return state is SignUpLoading
                       ? CustomLoading()
                       : CustomElevatedButton(
-                          name: "Sign Up",
+                          name: LocaleKeys.signIn_signUp.tr(),
                           onPressed: () {
                             cubit.signUp(
                               role: "Customer",
@@ -67,8 +69,8 @@ class CustomerTab extends StatelessWidget {
                 },
               ),
               HaveAccountOrNot(
-                title: 'Have an account',
-                btnText: "Sign In",
+                title: LocaleKeys.signUp_HaveAccount.tr(),
+                btnText: LocaleKeys.signIn_signIn.tr(),
                 onPressed: () {
                   context.popScreen();
                 },

@@ -1,13 +1,16 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:revive/core/components/custom_text_form_field_with_title.dart';
 import 'package:revive/core/utilies/extensions/app_extensions.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class UserDetails extends StatelessWidget {
   const UserDetails({
     super.key,
     required this.nameController,
     required this.emailController,
-    required this.addressController, required this.voucher,
+    required this.addressController,
+    required this.voucher,
   });
   final TextEditingController nameController,
       emailController,
@@ -25,23 +28,23 @@ class UserDetails extends StatelessWidget {
         spacing: context.height * 0.01,
         children: [
           CustomTextFormFieldWithTitle(
-            title: "User Name",
+            title: LocaleKeys.profile_textField_name.tr(),
             hintText: nameController.text,
             controller: nameController,
           ),
           CustomTextFormFieldWithTitle(
-            title: "User Email",
+            title: LocaleKeys.profile_textField_email.tr(),
             hintText: emailController.text,
             controller: emailController,
             enable: false,
           ),
           CustomTextFormFieldWithTitle(
-            title: "User Address",
+            title: LocaleKeys.profile_textField_address.tr(),
             hintText: addressController.text,
             controller: addressController,
           ),
           CustomTextFormFieldWithTitle(
-            title: "My Voucher",
+            title: LocaleKeys.profile_textField_voucher.tr(),
             hintText: voucher,
             enable: false,
           ),

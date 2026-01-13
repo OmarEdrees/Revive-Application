@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:revive/core/di/dependancy_injection.dart';
 import 'package:revive/core/network/supabase/database/add_data.dart';
 import 'package:revive/core/network/supabase/database/get_stream_data_with_spcific_id.dart';
 import 'package:revive/features/company/redeem/models/redeem_model.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 part 'redeem_state.dart';
@@ -42,7 +44,8 @@ class RedeemCubit extends Cubit<RedeemState> {
             emit(RedeemSuccess());
             retryCount = 0;
           } else {
-             emit(RedeemFailure(errorMessage: "No redeems found"));
+            emit(RedeemFailure(
+                errorMessage: LocaleKeys.Redeem_NoRedeemsFound.tr()));
             retryCount = 0;
           }
         },
@@ -53,7 +56,8 @@ class RedeemCubit extends Cubit<RedeemState> {
             await Future.delayed(Duration(seconds: 2));
             getCompanyRedeems();
           } else {
-            emit(RedeemFailure(errorMessage: "Failed to load data after $maxRetries retries"));
+            emit(RedeemFailure(
+                errorMessage: "Failed to load data after $maxRetries retries"));
           }
         },
       );
@@ -63,7 +67,8 @@ class RedeemCubit extends Cubit<RedeemState> {
         emit(RedeemLoading());
         Future.delayed(Duration(seconds: 2), () => getCompanyRedeems());
       } else {
-        emit(RedeemFailure(errorMessage: "Failed to load data after $maxRetries retries"));
+        emit(RedeemFailure(
+            errorMessage: "Failed to load data after $maxRetries retries"));
       }
     }
   }

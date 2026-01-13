@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:revive/core/components/custom_text_button.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({
@@ -11,7 +13,8 @@ class ForgetPassword extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        CustomTextButton(onPressed: () {}, title: "Forget password?"),
+        CustomTextButton(
+            onPressed: () {}, title: LocaleKeys.signIn_Forgetpassword.tr()),
       ],
     );
   }

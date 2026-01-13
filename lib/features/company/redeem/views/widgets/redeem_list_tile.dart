@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:revive/core/components/custom_icon_button.dart';
 import 'package:revive/core/utilies/colors/app_colors.dart';
 import 'package:revive/core/utilies/styles/app_text_styles.dart';
 import 'package:revive/features/company/redeem/models/redeem_model.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class RedeemListTile extends StatelessWidget {
   const RedeemListTile({
@@ -26,11 +28,11 @@ class RedeemListTile extends StatelessWidget {
         ),
       ),
       title: Text(
-        'Title : ${redeemModel.name} \nPrice : ${redeemModel.price} \$',
+        '${LocaleKeys.Redeem_Title.tr()} : ${redeemModel.name} \n${LocaleKeys.Redeem_Price.tr()} : ${redeemModel.price} \$',
         style: AppTextStyles.title20PrimaryColorW500,
       ),
       subtitle: Text(
-        'Description : ${redeemModel.description}',
+        '${LocaleKeys.Redeem_Description.tr()} : ${redeemModel.description}',
         style: AppTextStyles.title16GreyW500,
       ),
       trailing: onPressed == null

@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/components/custom_elevated_button.dart';
@@ -11,6 +12,7 @@ import 'package:revive/features/customer/categories/views/widgets/triple_bottom_
 import 'package:revive/features/customer/category_details/view_models/cubit/category_details_cubit.dart';
 import 'package:revive/features/customer/category_details/views/widgets/category_details_grid_view.dart';
 import 'package:revive/features/customer/category_details/views/widgets/select_category_quantity_and_price.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class CategoryDetailsScreenBody extends StatelessWidget {
   const CategoryDetailsScreenBody({
@@ -27,19 +29,19 @@ class CategoryDetailsScreenBody extends StatelessWidget {
           if (state is AddRequestSuccess) {
             context.popScreen();
             showCustomDialog(
-                title: "Success",
-                description: "Request sent successfully",
+                title: LocaleKeys.categoryDetails_Success.tr(),
+                description: LocaleKeys.categoryDetails_successMessage.tr(),
                 dialogType: DialogType.success);
           }
           if (state is FillAllRequestField) {
             showCustomDialog(
-                title: "Hint",
-                description: "Please Fill All Fields",
+                title: LocaleKeys.categoryDetails_Hint.tr(),
+                description: LocaleKeys.categoryDetails_HintMessage.tr(),
                 dialogType: DialogType.success);
           }
           if (state is AddRequestFailed) {
             showCustomDialog(
-                title: "Failed",
+                title: LocaleKeys.categoryDetails_Failed.tr(),
                 description: state.errorMessage,
                 dialogType: DialogType.error);
           }
@@ -105,7 +107,7 @@ class CategoryDetailsScreenBody extends StatelessWidget {
                               color: AppColors.primaryColor,
                             ))
                           : CustomElevatedButton(
-                              name: "Add Request",
+                              name: LocaleKeys.categoryDetails_AddRequest.tr(),
                               width: context.width * 0.75,
                               height: context.height * 0.07,
                               onPressed: () {

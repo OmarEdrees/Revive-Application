@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/app_route/route_names.dart';
@@ -9,6 +10,7 @@ import 'package:revive/features/customer/categories/view_models/cubit/sign_out_c
 import 'package:revive/features/customer/categories/views/widgets/custom_title.dart';
 import 'package:revive/features/customer/categories/views/widgets/pekia_grid_view.dart';
 import 'package:revive/features/customer/categories/views/widgets/triple_bottom_wave_painter.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class CategoriesScreenBody extends StatelessWidget {
   const CategoriesScreenBody({
@@ -31,14 +33,16 @@ class CategoriesScreenBody extends StatelessWidget {
                   if (state is SignOutSuccess) {
                     context.pushAndRemoveUntilScreen(RouteNames.signInScreen);
                     showCustomDialog(
-                      title: "Success",
-                      description: "Sign out successfully",
+                      title: LocaleKeys.categoryProducts_dialog_Success.tr(),
+                      description: LocaleKeys
+                          .categoryProducts_dialog_successMessage
+                          .tr(),
                       dialogType: DialogType.success,
                     );
                   }
                   if (state is SignOutFailed) {
                     showCustomDialog(
-                      title: "Failed",
+                      title: LocaleKeys.categoryProducts_dialog_Failed.tr(),
                       description: state.message,
                       dialogType: DialogType.error,
                     );
@@ -56,9 +60,12 @@ class CategoriesScreenBody extends StatelessWidget {
                             color: Colors.white,
                             onPressed: () {
                               showCustomDialog(
-                                title: "Sign out",
-                                description:
-                                    "Are you sure you want to sign out",
+                                title: LocaleKeys
+                                    .categoryProducts_dialog_SignOut
+                                    .tr(),
+                                description: LocaleKeys
+                                    .categoryProducts_dialog_SignOutMessage
+                                    .tr(),
                                 dialogType: DialogType.question,
                                 btnOkOnPress:
                                     context.read<SignOutCubit>().signOut,
@@ -72,7 +79,7 @@ class CategoriesScreenBody extends StatelessWidget {
           ),
         ),
         CustomTitle(
-          title: "Revive Categories",
+          title: LocaleKeys.categoryProducts_dialog_title.tr(),
         ),
         SizedBox(
           height: context.height * 0.015,

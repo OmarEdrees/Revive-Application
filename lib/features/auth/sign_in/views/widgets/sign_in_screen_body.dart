@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/helper/show_custom_dialog.dart';
@@ -8,6 +9,7 @@ import 'package:revive/features/auth/sign_in/view_models/cubit/sign_in_cubit.dar
 import 'package:revive/features/auth/sign_in/views/widgets/company_tap.dart';
 import 'package:revive/features/auth/sign_in/views/widgets/customer_tab.dart';
 import 'package:revive/features/auth/sign_in/views/widgets/sign_in_tab_bar.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class SignInScreenBody extends StatelessWidget {
   const SignInScreenBody({
@@ -38,21 +40,23 @@ class SignInScreenBody extends StatelessWidget {
                     if (state is SignInSuccess) {
                       context.pushAndRemoveUntilScreen(state.route);
                       showCustomDialog(
-                        title: "Success",
-                        description: "Sign in successfully",
+                        title: LocaleKeys.signIn_dialog_Success.tr(),
+                        description:
+                            LocaleKeys.signIn_dialog_SuccessMessage.tr(),
                         dialogType: DialogType.success,
                       );
                     }
                     if (state is SelectDiffrentRole) {
                       showCustomDialog(
-                        title: "Failure",
-                        description: "you are not a ${state.role}",
+                        title: LocaleKeys.signIn_dialog_Failure.tr(),
+                        description:
+                            "${LocaleKeys.signIn_dialog_FailureMessage.tr()} ${state.role}",
                         dialogType: DialogType.error,
                       );
                     }
                     if (state is SignInFailure) {
                       showCustomDialog(
-                        title: "Failure",
+                        title: LocaleKeys.signIn_dialog_Failure.tr(),
                         description: state.error,
                         dialogType: DialogType.error,
                       );

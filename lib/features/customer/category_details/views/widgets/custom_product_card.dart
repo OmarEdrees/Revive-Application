@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:revive/core/utilies/colors/app_colors.dart';
 import 'package:revive/core/utilies/extensions/app_extensions.dart';
@@ -30,7 +31,7 @@ class CustomProductCard extends StatelessWidget {
             height: context.width * 0.2,
           ),
           Text(
-            categoryProductsModel.name,
+            categoryProductsModel.name.tr(),
             style: isSelected
                 ? AppTextStyles.title20WhiteW500
                 : AppTextStyles.title20PrimaryColorW500,

@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:revive/core/utilies/colors/app_colors.dart';
 import 'package:revive/core/utilies/extensions/app_extensions.dart';
 import 'package:revive/features/customer/pekia_price/views/widgets/custom_pekia_price_title.dart';
 import 'package:revive/features/customer/pekia_price/views/widgets/custom_pekia_price_vertical_divider.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class PekiaPriceTabInfo extends StatelessWidget {
   const PekiaPriceTabInfo({
@@ -24,16 +26,16 @@ class PekiaPriceTabInfo extends StatelessWidget {
       child: Row(
         children: [
           CustomPekiaPriceTitle(
-            title: "Weight",
+            title: LocaleKeys.pekiaPrice_Weight.tr(),
           ),
           CustomPekiaPriceVerticalDivider(),
           CustomPekiaPriceTitle(
             color: AppColors.primaryColor,
-            title: "Material",
+            title: LocaleKeys.pekiaPrice_Material.tr(),
           ),
           CustomPekiaPriceVerticalDivider(),
           CustomPekiaPriceTitle(
-            title: "Price",
+            title: LocaleKeys.pekiaPrice_Price.tr(),
           ),
         ],
       ),

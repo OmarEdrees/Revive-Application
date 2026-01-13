@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/utilies/colors/app_colors.dart';
@@ -5,6 +6,7 @@ import 'package:revive/core/utilies/extensions/app_extensions.dart';
 import 'package:revive/core/utilies/styles/app_text_styles.dart';
 import 'package:revive/features/customer/categories/models/category_model.dart';
 import 'package:revive/features/customer/category_details/view_models/cubit/category_details_cubit.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class SelectCategoryQuantityAndPrice extends StatelessWidget {
   const SelectCategoryQuantityAndPrice({
@@ -51,7 +53,7 @@ class SelectCategoryQuantityAndPrice extends StatelessWidget {
                         "${cubit.sliderValue.toStringAsFixed(2)} Kg",
                         style: AppTextStyles.title28WhiteW500,
                       ),
-                      Text(categoryModel.name,
+                      Text(categoryModel.name.tr(),
                           style: AppTextStyles.title20WhiteW500),
                     ],
                   ),
@@ -61,7 +63,8 @@ class SelectCategoryQuantityAndPrice extends StatelessWidget {
                         "+   ${(cubit.sliderValue * categoryModel.price).toStringAsFixed(2)} \$",
                         style: AppTextStyles.title28PrimaryColorW500,
                       ),
-                      Text("income", style: AppTextStyles.title20WhiteW500),
+                      Text(LocaleKeys.categoryDetails_income.tr(),
+                          style: AppTextStyles.title20WhiteW500),
                     ],
                   ),
                 ],

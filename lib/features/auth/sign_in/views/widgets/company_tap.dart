@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/app_route/route_names.dart';
@@ -8,6 +9,7 @@ import 'package:revive/features/auth/sign_in/view_models/cubit/sign_in_cubit.dar
 import 'package:revive/features/auth/sign_in/views/widgets/custom_loading.dart';
 import 'package:revive/features/auth/sign_in/views/widgets/forget_password.dart';
 import 'package:revive/features/auth/sign_in/views/widgets/have_account_or_not.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class CompanyTab extends StatelessWidget {
   const CompanyTab({super.key, required this.cubit});
@@ -21,16 +23,16 @@ class CompanyTab extends StatelessWidget {
           child: Column(
             children: [
               CustomTextFormFieldWithTitle(
-                hintText: "enter company email",
-                title: "Company Email",
+                hintText: LocaleKeys.signIn_hintTextEmailCompany.tr(),
+                title: LocaleKeys.signIn_titleEmailCompany.tr(),
                 controller: cubit.companyEmailController,
               ),
               SizedBox(
                 height: context.height * 0.01,
               ),
               CustomTextFormFieldWithTitle(
-                hintText: "enter company password",
-                title: "Company Password",
+                hintText: LocaleKeys.signIn_hintTextPasswordCompany.tr(),
+                title: LocaleKeys.signIn_titlePasswordCompany.tr(),
                 isPassword: true,
                 controller: cubit.companyPasswordController,
               ),
@@ -41,7 +43,7 @@ class CompanyTab extends StatelessWidget {
                   return state is SignInLoading
                       ? CustomLoading()
                       : CustomElevatedButton(
-                          name: "Sign In",
+                          name: LocaleKeys.signIn_signIn.tr(),
                           onPressed: () {
                             cubit.signIn(
                               role: "Company",
@@ -55,8 +57,8 @@ class CompanyTab extends StatelessWidget {
                 },
               ),
               HaveAccountOrNot(
-                title: "Don't have an account?",
-                btnText: "Sign Up",
+                title: LocaleKeys.signIn_HaveAccount.tr(),
+                btnText: LocaleKeys.signIn_signUp.tr(),
                 onPressed: () {
                   context.pushScreen(RouteNames.signUpScreen);
                 },

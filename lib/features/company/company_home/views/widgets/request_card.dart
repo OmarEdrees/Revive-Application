@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/app_route/route_names.dart';
@@ -8,6 +9,7 @@ import 'package:revive/core/utilies/extensions/app_extensions.dart';
 import 'package:revive/features/company/company_home/models/request_model.dart';
 import 'package:revive/features/company/company_home/view_models/cubit/get_recycle_request_cubit.dart';
 import 'package:revive/features/company/company_home/views/widgets/quantity_and_product_name.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class RequestCard extends StatelessWidget {
   const RequestCard({
@@ -29,9 +31,8 @@ class RequestCard extends StatelessWidget {
       onLongPress: isNewItem
           ? () {
               showCustomClipperDialog(
-                  title: "Hint",
-                  message:
-                      "When you complete the request, please press OK to mark it as completed",
+                  title: LocaleKeys.categoryDetails_Hint.tr(),
+                  message: LocaleKeys.companyHome_message.tr(),
                   onConfirm: () {
                     context
                         .read<GetRecycleRequestCubit>()

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:revive/core/constants/app_constants.dart';
 import 'package:revive/core/utilies/extensions/app_extensions.dart';
@@ -31,7 +32,7 @@ class PekiaPriceScreenBody extends StatelessWidget {
             itemBuilder: (context, index) {
               return PekiaPriceCard(
                 prise: AppConstants.categoryProducts[index].price.toString(),
-                title: AppConstants.categoryProducts[index].name,
+                title: AppConstants.categoryProducts[index].name.tr(),
               );
             },
           ),
@@ -40,4 +41,3 @@ class PekiaPriceScreenBody extends StatelessWidget {
     );
   }
 }
-

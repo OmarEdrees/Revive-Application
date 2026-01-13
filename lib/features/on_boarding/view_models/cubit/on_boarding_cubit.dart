@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/utilies/assets/lotties/app_lotties.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class OnBoardingCubit extends Cubit<int> {
   OnBoardingCubit() : super(0);
@@ -15,19 +17,19 @@ class OnBoardingCubit extends Cubit<int> {
   ];
 
   List<String> titleList = [
-    "Welcome to Revive!",
-    "Donate Recyclable Products!",
-    "Select Your Industry!",
-    "Earn Rewards for Recycling!",
-    "Get Started with Revive!",
+    LocaleKeys.onboarding_welcome_title.tr(),
+    LocaleKeys.onboarding_donate_title.tr(),
+    LocaleKeys.onboarding_select_title.tr(),
+    LocaleKeys.onboarding_earn_title.tr(),
+    LocaleKeys.onboarding_get_title.tr(),
   ];
 
   List<String> descriptionList = [
-    "Join us in our mission to make the world a cleaner place by recycling and earning rewards.",
-    "Drop off your recyclable items and earn points that can be exchanged for vouchers.",
-    "As a company, choose the recycling industry you want to support, and start collecting donations.",
-    "For every item you recycle, you get points that can be exchanged for exciting vouchers!",
-    "Sign up or log in to begin your journey with Revive and start making a difference.",
+    LocaleKeys.onboarding_welcome_description.tr(),
+    LocaleKeys.onboarding_donate_description.tr(),
+    LocaleKeys.onboarding_select_description.tr(),
+    LocaleKeys.onboarding_earn_description.tr(),
+    LocaleKeys.onboarding_get_description.tr(),
   ];
 
   void nextPage() {

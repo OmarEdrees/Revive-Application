@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/components/custom_drop_down_button_form_field.dart';
@@ -8,6 +9,7 @@ import 'package:revive/core/utilies/styles/app_text_styles.dart';
 import 'package:revive/features/auth/sign_in/views/widgets/custom_loading.dart';
 import 'package:revive/features/auth/sign_in/views/widgets/have_account_or_not.dart';
 import 'package:revive/features/auth/sign_up/view_models/cubit/sign_up_cubit.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class CompanyTab extends StatelessWidget {
   const CompanyTab({super.key, required this.cubit});
@@ -30,45 +32,45 @@ class CompanyTab extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomTextFormFieldWithTitle(
-                  hintText: "enter company name",
-                  title: "Company Name",
+                  hintText: LocaleKeys.signUp_hintTextNameCompany.tr(),
+                  title: LocaleKeys.signUp_titleNameCompany.tr(),
                   controller: cubit.companyNameController,
                 ),
                 CustomTextFormFieldWithTitle(
-                  hintText: "enter company email",
-                  title: "Company Email",
+                  hintText: LocaleKeys.signUp_hintTextAddressCompany.tr(),
+                  title: LocaleKeys.signUp_titleAddressCompany.tr(),
                   controller: cubit.companyEmailController,
                 ),
                 CustomTextFormFieldWithTitle(
-                  hintText: "enter company address",
-                  title: "Company Address",
+                  hintText: LocaleKeys.signIn_hintTextEmailCompany.tr(),
+                  title: LocaleKeys.signIn_titleEmailCompany.tr(),
                   controller: cubit.companyAddressController,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Company Industry",
+                      LocaleKeys.signUp_CompanyIndustry.tr(),
                       style: AppTextStyles.title18PrimaryColorW500,
                     ),
                     SizedBox(height: context.height * 0.003),
                     CustomDropDownButtonFormField(
-                      hintText: 'Select Industry',
+                      hintText: LocaleKeys.signUp_SelectIndustry.tr(),
                       userRoles: [
-                        "Plastic",
-                        "Metal",
-                        "E-Waste",
-                        "Cardboard",
-                        "Paper",
-                        "Glass",
+                        LocaleKeys.categoryProducts_Plastic_title.tr(),
+                        LocaleKeys.categoryProducts_Metal_title.tr(),
+                        LocaleKeys.categoryProducts_EWaste_title.tr(),
+                        LocaleKeys.categoryProducts_Cardboard_title.tr(),
+                        LocaleKeys.categoryProducts_Paper_title.tr(),
+                        LocaleKeys.categoryProducts_Glass_title.tr(),
                       ],
                       controller: cubit.companyIndustryController,
                     ),
                   ],
                 ),
                 CustomTextFormFieldWithTitle(
-                  hintText: "enter company password",
-                  title: "Company Password",
+                  hintText: LocaleKeys.signIn_hintTextPasswordCompany.tr(),
+                  title: LocaleKeys.signIn_titlePasswordCompany.tr(),
                   controller: cubit.companyPasswordController,
                   isPassword: true,
                 ),
@@ -80,7 +82,7 @@ class CompanyTab extends StatelessWidget {
                     return state is SignUpLoading
                         ? const CustomLoading()
                         : CustomElevatedButton(
-                            name: "Sign Up",
+                            name: LocaleKeys.signIn_signUp.tr(),
                             onPressed: () {
                               cubit.signUp(
                                 role: "Company",
@@ -96,8 +98,8 @@ class CompanyTab extends StatelessWidget {
                   },
                 ),
                 HaveAccountOrNot(
-                  title: 'Have an account',
-                  btnText: "Sign In",
+                  title: LocaleKeys.signUp_HaveAccount.tr(),
+                  btnText: LocaleKeys.signIn_signIn.tr(),
                   onPressed: () {
                     context.popScreen();
                   },

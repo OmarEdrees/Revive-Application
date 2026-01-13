@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
@@ -15,6 +16,7 @@ import 'package:revive/features/company/company_home/views/widgets/company_home_
 import 'package:revive/features/company/company_home/views/widgets/requests_grid_view.dart';
 import 'package:revive/features/customer/categories/view_models/cubit/sign_out_cubit.dart';
 import 'package:revive/features/customer/categories/views/widgets/triple_bottom_wave_painter.dart';
+import 'package:revive/generated/locale_keys.g.dart';
 
 class CompanyHomeScreenBody extends StatelessWidget {
   const CompanyHomeScreenBody({
@@ -37,17 +39,18 @@ class CompanyHomeScreenBody extends StatelessWidget {
                 child: BlocConsumer<SignOutCubit, SignOutState>(
                   listener: (context, state) {
                     if (state is SignOutSuccess) {
-                      context
-                          .pushAndRemoveUntilScreen(RouteNames.signInScreen);
+                      context.pushAndRemoveUntilScreen(RouteNames.signInScreen);
                       showCustomDialog(
-                        title: "Success",
-                        description: "Sign out successfully",
+                        title: LocaleKeys.categoryProducts_dialog_Success.tr(),
+                        description: LocaleKeys
+                            .categoryProducts_dialog_successMessage
+                            .tr(),
                         dialogType: DialogType.success,
                       );
                     }
                     if (state is SignOutFailed) {
                       showCustomDialog(
-                        title: "Failed",
+                        title: LocaleKeys.categoryProducts_dialog_Failed.tr(),
                         description: state.message,
                         dialogType: DialogType.error,
                       );
@@ -65,9 +68,12 @@ class CompanyHomeScreenBody extends StatelessWidget {
                               color: Colors.white,
                               onPressed: () {
                                 showCustomDialog(
-                                  title: "Sign out",
-                                  description:
-                                      "Are you sure you want to sign out",
+                                  title: LocaleKeys
+                                      .categoryProducts_dialog_SignOut
+                                      .tr(),
+                                  description: LocaleKeys
+                                      .categoryProducts_dialog_SignOutMessage
+                                      .tr(),
                                   dialogType: DialogType.question,
                                   btnOkOnPress:
                                       context.read<SignOutCubit>().signOut,
@@ -83,15 +89,14 @@ class CompanyHomeScreenBody extends StatelessWidget {
           CompanyHomeScreenTitle(),
           CompanyHomeScreenTabBar(),
           Expanded(
-            child:
-                BlocConsumer<GetRecycleRequestCubit, GetRecycleRequestState>(
+            child: BlocConsumer<GetRecycleRequestCubit, GetRecycleRequestState>(
               listener: (context, state) {
                 if (state is UpdateRequestSuccess) {
-                  showSnackBar(title: "Request updated successfully");
+                  showSnackBar(
+                      title: LocaleKeys.companyHome_SuccessSnackBar.tr());
                 }
                 if (state is UpdateRequestFailure) {
-                  showSnackBar(
-                      title: "error on updating request please try again");
+                  showSnackBar(title: LocaleKeys.companyHome_SuccessError.tr());
                 }
               },
               builder: (context, state) {
