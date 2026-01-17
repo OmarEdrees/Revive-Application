@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/cache/cache_helper.dart';
 import 'package:revive/core/di/dependancy_injection.dart';
@@ -36,17 +39,19 @@ class CategoryDetailsCubit extends Cubit<CategoryDetailsState> {
         categoryName != null) {
       try {
         emit(AddRequestLoading());
+
         await addData(
           tableName: "recycle_request",
           data: {
-            "category_name": categoryName,
-            "product_name": productName,
+            "category_name": categoryName!.tr(),
+            "product_name": productName!.tr(),
             "product_quantity": productQuantity,
             "product_price": productPrice,
             "user_id": getIt<SupabaseClient>().auth.currentUser!.id,
             "user_name": getIt<CacheHelper>().getUserModel()!.name,
           },
         );
+
         emit(AddRequestSuccess());
       } on Exception catch (e) {
         emit(AddRequestFailed(errorMessage: e.toString()));

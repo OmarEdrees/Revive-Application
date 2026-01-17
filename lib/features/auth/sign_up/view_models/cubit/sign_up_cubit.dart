@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/core/di/dependancy_injection.dart';
@@ -22,12 +24,12 @@ class SignUpCubit extends Cubit<SignUpState> {
   final customerAddressController = TextEditingController();
   final customerFormKey = GlobalKey<FormState>();
   //! sign up with supabase
-  signUp(
-      {required String role,
-      required String name,
-      required String email,
-      required String password,
-      required String address,
+  signUp({
+    required String role,
+    required String name,
+    required String email,
+    required String password,
+    required String address,
   }) async {
     if (role == "Customer"
         ? customerFormKey.currentState!.validate()
@@ -38,8 +40,8 @@ class SignUpCubit extends Cubit<SignUpState> {
       }
       try {
         emit(SignUpLoading());
-        await signUpWithPassword(
-            email: email, password: password);
+        log(email);
+        await signUpWithPassword(email: email, password: password);
         await addData(
           tableName: role == "Customer" ? "customerss" : "companiess",
           data: {
@@ -52,9 +54,12 @@ class SignUpCubit extends Cubit<SignUpState> {
         );
         emit(SignUpSuccess());
       } catch (e) {
-        emit(SignUpFailure(
-          errorMessage: e.toString(),
-        ));
+        log("===============================$e");
+        emit(
+          SignUpFailure(
+            errorMessage: e.toString(),
+          ),
+        );
       }
     }
   }

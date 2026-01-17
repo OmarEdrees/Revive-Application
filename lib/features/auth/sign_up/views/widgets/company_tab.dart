@@ -39,12 +39,12 @@ class CompanyTab extends StatelessWidget {
                 CustomTextFormFieldWithTitle(
                   hintText: LocaleKeys.signUp_hintTextAddressCompany.tr(),
                   title: LocaleKeys.signUp_titleAddressCompany.tr(),
-                  controller: cubit.companyEmailController,
+                  controller: cubit.companyAddressController,
                 ),
                 CustomTextFormFieldWithTitle(
                   hintText: LocaleKeys.signIn_hintTextEmailCompany.tr(),
                   title: LocaleKeys.signIn_titleEmailCompany.tr(),
-                  controller: cubit.companyAddressController,
+                  controller: cubit.companyEmailController,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,7 +87,7 @@ class CompanyTab extends StatelessWidget {
                               cubit.signUp(
                                 role: "Company",
                                 address: cubit.companyAddressController.text,
-                                email: cubit.companyEmailController.text,
+                                email: cubit.companyEmailController.text.trim(),
                                 name: cubit.companyNameController.text,
                                 password: cubit.companyPasswordController.text,
                               );
