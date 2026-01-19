@@ -43,8 +43,8 @@ class CategoryDetailsCubit extends Cubit<CategoryDetailsState> {
         await addData(
           tableName: "recycle_request",
           data: {
-            "category_name": categoryName!.tr(),
-            "product_name": productName!.tr(),
+            "category_name": categoryName,
+            "product_name": productName,
             "product_quantity": productQuantity,
             "product_price": productPrice,
             "user_id": getIt<SupabaseClient>().auth.currentUser!.id,

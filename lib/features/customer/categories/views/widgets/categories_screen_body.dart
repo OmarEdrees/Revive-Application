@@ -10,6 +10,7 @@ import 'package:revive/features/customer/categories/view_models/cubit/sign_out_c
 import 'package:revive/features/customer/categories/views/widgets/custom_title.dart';
 import 'package:revive/features/customer/categories/views/widgets/pekia_grid_view.dart';
 import 'package:revive/features/customer/categories/views/widgets/triple_bottom_wave_painter.dart';
+import 'package:revive/features/customer/profile/views/widgets/profile_screen_body.dart';
 import 'package:revive/generated/locale_keys.g.dart';
 
 class CategoriesScreenBody extends StatelessWidget {
@@ -19,6 +20,7 @@ class CategoriesScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isEnglish = context.locale.languageCode == 'en';
     return Column(
       children: [
         SizedBox(
@@ -49,29 +51,60 @@ class CategoriesScreenBody extends StatelessWidget {
                   }
                 },
                 builder: (context, state) {
-                  return Align(
-                    alignment: Alignment.centerRight,
-                    child: state is SignOutLoading
-                        ? CircularProgressIndicator(
-                            color: Colors.white,
-                          )
-                        : CustomIconButton(
-                            icon: Icons.logout_rounded,
-                            color: Colors.white,
-                            onPressed: () {
-                              showCustomDialog(
-                                title: LocaleKeys
-                                    .categoryProducts_dialog_SignOut
-                                    .tr(),
-                                description: LocaleKeys
-                                    .categoryProducts_dialog_SignOutMessage
-                                    .tr(),
-                                dialogType: DialogType.question,
-                                btnOkOnPress:
-                                    context.read<SignOutCubit>().signOut,
-                              );
-                            },
+                  return Row(
+                    children: [
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: state is SignOutLoading
+                            ? CircularProgressIndicator(
+                                color: Colors.white,
+                              )
+                            : CustomIconButton(
+                                icon: Icons.logout_rounded,
+                                color: Colors.white,
+                                onPressed: () {
+                                  showCustomDialog(
+                                    title: LocaleKeys
+                                        .categoryProducts_dialog_SignOut
+                                        .tr(),
+                                    description: LocaleKeys
+                                        .categoryProducts_dialog_SignOutMessage
+                                        .tr(),
+                                    dialogType: DialogType.question,
+                                    btnOkOnPress:
+                                        context.read<SignOutCubit>().signOut,
+                                  );
+                                },
+                              ),
+                      ),
+                      Spacer(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            LocaleKeys.onboarding_buttons_changeLang.tr(),
+                            style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
                           ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: Switch(
+                              activeColor: Colors.black,
+                              value: isEnglish,
+                              onChanged: (value) {
+                                if (value) {
+                                  context.setLocale(const Locale('en'));
+                                } else {
+                                  context.setLocale(const Locale('ar'));
+                                }
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   );
                 },
               ),

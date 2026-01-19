@@ -73,7 +73,6 @@ class ProfileScreenBody extends StatelessWidget {
                   SizedBox(
                     height: context.height * 0.03,
                   ),
-                  LanguageSwitch(),
                   state is UpdateProfileLoading
                       ? CustomLoading()
                       : CustomElevatedButton(
@@ -91,35 +90,6 @@ class ProfileScreenBody extends StatelessWidget {
           );
         },
       ),
-    );
-  }
-}
-
-class LanguageSwitch extends StatelessWidget {
-  const LanguageSwitch({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final isEnglish = context.locale.languageCode == 'en';
-
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          LocaleKeys.onboarding_buttons_changeLang.tr(),
-          style: const TextStyle(fontSize: 16),
-        ),
-        Switch(
-          value: isEnglish,
-          onChanged: (value) {
-            if (value) {
-              context.setLocale(const Locale('en'));
-            } else {
-              context.setLocale(const Locale('ar'));
-            }
-          },
-        ),
-      ],
     );
   }
 }
